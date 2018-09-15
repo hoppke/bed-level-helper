@@ -1,0 +1,71 @@
+$orig-grid-border-radius: 4pt;
+$core-grid-border-radius: 10pt;
+$action-button-radius: 3pt;
+
+@import 'reset';
+@import 'big_table';
+@import 'core_table';
+
+$main-font: "Helvetica Neue";
+
+* {
+    font-family: $main-font;
+}
+
+body {
+    padding: 1em;
+}
+
+.calibration_data {
+    width: 30em;
+    height: 15em;
+    padding: 4pt;
+}
+
+label {
+    display: block;
+}
+
+button.evaluate:hover {
+    border-style: solid;
+    border-width: 1pt;
+}
+
+.timestamp {
+    font-size: 10pt;
+    text-align: center;
+    color: darkblue;
+}
+
+button.evaluate {
+    border-color: black;
+    border-width: 1pt;
+    border-radius: $action-button-radius;
+    display: block;
+    padding: 6pt 18pt;
+    margin: 4pt 0;
+    border-style: dashed;
+}
+
+div.left_box {
+    display: inline-block;
+    vertical-align: middle;
+}
+div.right_box {
+    display: inline-block;
+    margin-left: 1em;
+    vertical-align: middle;
+}
+
+.box_holder_template {
+    display: none;
+}
+
+.box_holder {
+    margin-bottom: 15pt;
+}
+
+#active_box_holder:not(:first-child) {
+    border-top: 2pt dashed;
+    padding-top: 6pt;
+}

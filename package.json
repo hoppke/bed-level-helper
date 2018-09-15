@@ -1,0 +1,35 @@
+{
+  "name": "bedlevel",
+  "version": "1.0.0",
+  "description": "Bed level",
+  "main": "index.js",
+  "author": "Grzegorz",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "@babel/core": "^7.0.0-bridge.0",
+    "@babel/preset-env": "^7.0.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-loader": "^8.0.2",
+    "babel-preset-env": "^7.0.0-beta.3",
+    "css-loader": "^1.0.0",
+    "eslint": "^5.5.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-loader": "^2.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "node-sass": "^4.9.3",
+    "raw-loader": "^0.5.1",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.0",
+    "webpack": "^4.19.0",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.8"
+  },
+  "scripts": {
+    "start": "webpack-dev-server --history-api-fallback --inline --progress --mode development"
+  }
+}
