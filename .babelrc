@@ -1,1 +1,1 @@
-{ "presets": [ "env" ] }
+{ "presets": [ "env", "@babel/preset-react"] }

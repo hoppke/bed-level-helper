@@ -1,0 +1,10 @@
+#finished_sessions > div {
+    display: inline-block;
+    margin: 15pt 10pt;
+}
+
+#finished_sessions {
+    $scaling_factor: 0.8;
+    @import 'core_table';
+}
+

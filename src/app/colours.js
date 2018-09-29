@@ -1,6 +1,6 @@
 'use strict'
-export default function hsvToRgb(h, s, v) {
-  var r, g, b
+function hsvToRgb(h, s, v) {
+  let r, g, b
 
   let i = Math.floor(h * 6)
   let f = h * 6 - i
@@ -30,4 +30,27 @@ export default function hsvToRgb(h, s, v) {
   }
 
   return [r * 255, g * 255, b * 255]
+}
+
+function offsetRemapper(offset, peak) {
+  let saturationLimit = 0.85
+  return saturationLimit * Math.min(Math.abs(offset), peak) / peak
+}
+
+function toHexString(rgb) {
+  return '#' + rgb.map(s => Number(Math.round(s)).toString(16).padStart(2, '0')).join('')
+}
+
+export function offsetToColourFn(peak) {
+  return function (offset) {
+    let level = offsetRemapper(offset, peak)
+    if (offset > 0) {
+      // blue
+      return toHexString(hsvToRgb(0.65, level, 0.8))
+    } else if (offset < 0) {
+      // red
+      return toHexString(hsvToRgb(0.0, level, 0.8))
+    }
+    return '#fff'
+  }
 }

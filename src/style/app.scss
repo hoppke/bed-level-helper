@@ -2,9 +2,14 @@ $orig-grid-border-radius: 4pt;
 $core-grid-border-radius: 10pt;
 $action-button-radius: 3pt;
 
+$scaling_factor: 1.0;
+
+$button_border: 1pt;
+
 @import 'reset';
-@import 'big_table';
 @import 'core_table';
+@import 'finished_sessions';
+
 
 $main-font: "Helvetica Neue";
 
@@ -17,8 +22,8 @@ body {
 }
 
 .calibration_data {
-    width: 30em;
-    height: 15em;
+    width: 40em;
+    height: 30em;
     padding: 4pt;
 }
 
@@ -26,9 +31,9 @@ label {
     display: block;
 }
 
-button.evaluate:hover {
-    border-style: solid;
-    border-width: 1pt;
+button:hover {
+    border: $button_border solid orangered;
+    background-color: #ffc7b3;
 }
 
 .timestamp {
@@ -37,35 +42,46 @@ button.evaluate:hover {
     color: darkblue;
 }
 
-button.evaluate {
-    border-color: black;
-    border-width: 1pt;
+button {
     border-radius: $action-button-radius;
-    display: block;
+    // display: block;
     padding: 6pt 18pt;
     margin: 4pt 0;
-    border-style: dashed;
+    border: $button_border solid black;
+}
+button.evaluate_add_to_series {
+    margin-left: auto;
+    margin-right: 0;
+    display: block;
+    width: 20em;
+}
+
+.bed_grid {
+    margin: 4pt 10pt;
+}
+
+button.evaluate_finish_series {
+    margin-left: auto;
+    margin-right: 0;
+    display: block;
+    width: 20em;
+}
+
+.samples button {
+    margin: 10pt 5pt;
 }
 
 div.left_box {
     display: inline-block;
-    vertical-align: middle;
+    vertical-align: top;
 }
 div.right_box {
     display: inline-block;
     margin-left: 1em;
-    vertical-align: middle;
-}
-
-.box_holder_template {
-    display: none;
+    vertical-align: top;
 }
 
 .box_holder {
     margin-bottom: 15pt;
 }
 
-#active_box_holder:not(:first-child) {
-    border-top: 2pt dashed;
-    padding-top: 6pt;
-}

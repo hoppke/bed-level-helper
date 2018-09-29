@@ -13,12 +13,12 @@ module.exports = {
     rules: [
       {
         enforce: 'pre',
-        test: /\.(js)$/,
+        test: /\.jsx?$/,
         exclude: /node_modules/,
         loader: 'eslint-loader',
         options: {
           // eslint options (if necessary)
-          failOnWarning: true
+          failOnWarning: false
           // configFile: "eslint.json"
         }
       },
@@ -30,8 +30,9 @@ module.exports = {
         ]
       },
       {
-        test: /\.(js)$/,
+        test: /.jsx?$/,
         use: 'babel-loader',
+        resolve: { extensions: ['.js', '.jsx'] },
         exclude: [
           /node_modules/
         ]

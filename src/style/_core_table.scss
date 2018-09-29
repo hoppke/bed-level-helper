@@ -1,27 +1,42 @@
 .bed_grid {
     td {
-        width: 7em;
-        height: 5em;
-        font-size: 10pt;
+        width: $scaling_factor * 100pt;
+        height: $scaling_factor * 80pt;
+        font-size: $scaling_factor *24pt;
         text-align: center;
         vertical-align: middle;
     }
 
     tr:first-child {
         td:first-child {
-            border-radius: $core-grid-border-radius 0 0 0;
+            border-radius: $core-grid-border-radius*$scaling_factor 0 0 0;
         }
         td:last-child {
-            border-radius: 0 $core-grid-border-radius 0 0;
+            border-radius: 0 $core-grid-border-radius*$scaling_factor 0 0;
         }
     } 
     
     tr:last-child {
         td:first-child {
-            border-radius: 0 0 0 $core-grid-border-radius;
+            border-radius: 0 0 0 $core-grid-border-radius*$scaling_factor;
         }
         td:last-child {
-            border-radius: 0 0 $core-grid-border-radius 0;
+            border-radius: 0 0 $core-grid-border-radius*$scaling_factor 0;
         }
     }
+
+    td > div:not(:first-child) {
+        font-size: small;
+    }
+
+    td > div:first-child {
+        margin-bottom: $scaling_factor * 10pt;
+    }
+
+    td > div {
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    display: inline-block;
 }
